@@ -1,6 +1,9 @@
 import propTypes from 'prop-types';
 import { Button, ItemLi } from './Contact.styled';
-export const Contact = ({ name, number, deleteContact, id }) => {
+import { useDispatch } from 'react-redux';
+import { phoneBook } from 'redux/phoneBook';
+export const Contact = ({ name, number, id }) => {
+  const dispatch = useDispatch();
   return (
     <>
       <ItemLi key={id}>
@@ -8,9 +11,7 @@ export const Contact = ({ name, number, deleteContact, id }) => {
         <span>{number}</span>
         <Button
           type="button"
-          onClick={() => {
-            deleteContact(id);
-          }}
+          onClick={() => dispatch(phoneBook.actions.delItem(id))}
         >
           Delete
         </Button>
@@ -22,5 +23,4 @@ Contact.propTypes = {
   id: propTypes.string.isRequired,
   name: propTypes.string.isRequired,
   number: propTypes.string.isRequired,
-  deleteContact: propTypes.func.isRequired,
 };

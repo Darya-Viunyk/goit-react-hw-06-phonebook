@@ -1,19 +1,11 @@
 import { Contact } from './Contact';
 import propTypes from 'prop-types';
 import { ListStyle } from './Contacts.styled';
-export const Contacts = ({ contacts, deleteContact }) => {
+export const Contacts = ({ contacts }) => {
   return (
     <ListStyle>
       {contacts.map(({ name, id, number }) => {
-        return (
-          <Contact
-            key={id}
-            id={id}
-            name={name}
-            number={number}
-            deleteContact={deleteContact}
-          />
-        );
+        return <Contact key={id} id={id} name={name} number={number} />;
       })}
     </ListStyle>
   );
@@ -26,5 +18,4 @@ Contacts.propTypes = {
       number: propTypes.string.isRequired,
     })
   ).isRequired,
-  deleteContact: propTypes.func.isRequired,
 };
