@@ -1,7 +1,11 @@
 import { Contact } from './Contact';
-import propTypes from 'prop-types';
+
 import { ListStyle } from './Contacts.styled';
-export const Contacts = ({ contacts }) => {
+import { useSelector } from 'react-redux';
+
+export const Contacts = () => {
+  const contacts = useSelector(state => state.items);
+
   return (
     <ListStyle>
       {contacts.map(({ name, id, number }) => {
@@ -9,13 +13,4 @@ export const Contacts = ({ contacts }) => {
       })}
     </ListStyle>
   );
-};
-Contacts.propTypes = {
-  contacts: propTypes.arrayOf(
-    propTypes.shape({
-      id: propTypes.string.isRequired,
-      name: propTypes.string.isRequired,
-      number: propTypes.string.isRequired,
-    })
-  ).isRequired,
 };

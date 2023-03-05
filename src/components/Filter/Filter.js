@@ -10,6 +10,7 @@ export const Filter = () => {
     const value = e.target.value.trim().toLowerCase();
     dispatch(phoneBook.actions.setFilter(value));
   };
+
   return (
     <>
       <FiltrBox>

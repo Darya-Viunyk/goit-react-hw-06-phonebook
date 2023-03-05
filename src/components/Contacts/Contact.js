@@ -2,8 +2,10 @@ import propTypes from 'prop-types';
 import { Button, ItemLi } from './Contact.styled';
 import { useDispatch } from 'react-redux';
 import { phoneBook } from 'redux/phoneBook';
+
 export const Contact = ({ name, number, id }) => {
   const dispatch = useDispatch();
+
   return (
     <>
       <ItemLi key={id}>
