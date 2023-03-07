@@ -15,7 +15,7 @@ export const App = () => {
   const getFilteredContacts = () => {
     return contacts.filter(it => it.name.toLowerCase().includes(filter));
   };
-
+  const filteredContacts = getFilteredContacts();
   return (
     <>
       <Container>
@@ -27,7 +27,7 @@ export const App = () => {
           <NameH2>Contacts</NameH2>
           <Filter />
 
-          <Contacts contacts={getFilteredContacts()} />
+          <Contacts contacts={filteredContacts} />
         </div>
       </Container>
     </>
