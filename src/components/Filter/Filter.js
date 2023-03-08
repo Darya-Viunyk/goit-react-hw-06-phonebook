@@ -1,9 +1,9 @@
 import { ImpytStyle, TextSpan, FiltrBox } from './Filter.styles';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { phoneBook } from 'redux/phoneBook';
 
 export const Filter = () => {
-  const filter = useSelector(state => state.filter);
+  // const filter = useSelector(state => state.filter);
   const dispatch = useDispatch();
 
   const onChangeValue = e => {
@@ -17,7 +17,7 @@ export const Filter = () => {
         <TextSpan>Find contacts by name</TextSpan>
         <div>
           <ImpytStyle
-            value={filter}
+            // value={filter}
             onChange={onChangeValue}
             type="text"
             name="name"

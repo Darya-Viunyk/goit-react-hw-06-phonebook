@@ -1,21 +1,21 @@
 import { Filter } from 'components/Filter/Filter';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import { Container, NameH2 } from './App.styled';
 import { FormContacts } from 'components/FormContacts/FormContacts';
 import { Contacts } from 'components/Contacts/Contacts';
 
 export const App = () => {
-  const contacts = useSelector(state => {
-    return state.items;
-  });
-  const filter = useSelector(state => {
-    return state.filter;
-  });
+  // const contacts = useSelector(state => {
+  //   return state.items;
+  // });
+  // const filter = useSelector(state => {
+  //   return state.filter;
+  // });
 
-  const getFilteredContacts = () => {
-    return contacts.filter(it => it.name.toLowerCase().includes(filter));
-  };
-  const filteredContacts = getFilteredContacts();
+  // const getFilteredContacts = () => {
+  //   return contacts.filter(it => it.name.toLowerCase().includes(filter));
+  // };
+  // const filteredContacts = getFilteredContacts();
   return (
     <>
       <Container>
@@ -27,7 +27,7 @@ export const App = () => {
           <NameH2>Contacts</NameH2>
           <Filter />
 
-          <Contacts contacts={filteredContacts} />
+          <Contacts />
         </div>
       </Container>
     </>
