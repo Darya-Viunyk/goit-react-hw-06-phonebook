@@ -11,8 +11,7 @@ const contactsState = [
 
 export const phoneBook = createSlice({
   name: 'contacts',
-  initialState: contactsState,
-  filter: '',
+  initialState: { items: contactsState, filter: '' },
 
   reducers: {
     setFilter: (state, action) => {
